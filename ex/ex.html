@@ -9,8 +9,8 @@
 	
 	<body>
 		<div id="app">
-			<p>{{myArray}}</p>
-			<p>{{myArray[0]}}</p>
+			<p>{{myTea}}</p>
+			<p>{{myTea.name}}￥{{myTea.price}}</p>
 
 		</div>
 
@@ -18,9 +18,9 @@
 			new Vue({
 				el: '#app',
 				data: {
-					myArray:['ダージリン','アールグレイ','セイロン']
+					myTea:{name:'ダージリン',price:600}
 				}
 			})
 		</script>
-	</body>
+	</body>b
 </html>
