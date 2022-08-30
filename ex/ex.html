@@ -9,18 +9,16 @@
 	
 	<body>
 		<div id="app">
-			<p>{{myNumber}}</p>
-			<p>{{myText}}</p>
-			<p>{{myBool}}</p>
+			<p>{{myArray}}</p>
+			<p>{{myArray[0]}}</p>
+
 		</div>
 
 		<script>
 			new Vue({
 				el: '#app',
 				data: {
-					myNumber:12345,
-					myText:'Hello!!!',
-					myBool:true
+					myArray:['ダージリン','アールグレイ','セイロン']
 				}
 			})
 		</script>
