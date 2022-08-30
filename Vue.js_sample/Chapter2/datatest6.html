@@ -10,6 +10,7 @@
 	<body>
 		<h2>オブジェクトデータの中身を確認する例</h2>
 		<div id="app">
+			<!--$dataでオブジェクトデータの中身を確認する例-->
 			{{ $data }}
 			<hr>
 			<li v-for="(item, key) in $data">{{ key }} : {{ item }}</li>
