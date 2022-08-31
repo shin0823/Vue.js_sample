@@ -9,21 +9,20 @@
 	
 	<body>
 		<div id="app">
-			<p>{{myTea}}</p>
-			<p>{{myTea[1].name}}￥{{myTea[1].price}}</p>
+			<p class="strike-through">直接クラスを指定</p>
+			<p v-bind:class="myClass">v-bindでクラスを指定</p>
+			<p v-bind:class="[myClass,darkClass]">v-bindで複数のクラスを指定</p>
+			<p v-bind:class="{'strike-through':isON}">データでクラスをONOFF</p>
 
 		</div>
 
 		<script>
-			var teaList=[
-			{name:'ダージリン',price:600},
-			{name:'アールグレイ',price:500},
-			{name:'セイロン',price:500}
-			];
 			new Vue({
 				el: '#app',
 				data: {
-					myTea:teaList
+					myClass:'strike-through',
+					darkClass:'dark',
+					isON:true
 				}
 			})
 		</script>
