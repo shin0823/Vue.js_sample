@@ -9,15 +9,17 @@
 	
 	<body>
 		<div id="app">
-			<label><input type="checkbox" v-model="myAgree">同意します。</label>
-			<button v-bind:disabled="myAgree==false">送信</button>
+			<label><input type="radio" value="face1.png" v-model="fileName">face1</label><br>
+			<label><input type="radio" value="face2.png" v-model="fileName">face2</label><br>
+			<p>{{fileName}}を選択</p>
+			<img v-bind:src="fileName"></img>
 		</div>
 
 		<script>
 			new Vue({
 				el: '#app',
 				data: {
-					myAgree:false
+					fileName:''
 				}
 			})
 		</script>
