@@ -9,17 +9,15 @@
 	
 	<body>
 		<div id="app">
-			<label><input type="checkbox" value="red" v-model="myChecks">赤</label><br>
-			<label><input type="checkbox" value="green" v-model="myChecks">緑</label><br>
-			<label><input type="checkbox" value="blue" v-model="myChecks">青</label><br>
-			選択したのは、{{myChecks}}
+			<label><input type="checkbox" v-model="myAgree">同意します。</label>
+			<button v-bind:disabled="myAgree==false">送信</button>
 		</div>
 
 		<script>
 			new Vue({
 				el: '#app',
 				data: {
-					myChecks:[]
+					myAgree:false
 				}
 			})
 		</script>
