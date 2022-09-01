@@ -9,14 +9,17 @@
 	
 	<body>
 		<div id="app">
-			<label><input type="checkbox" v-model="myCheck">チェックボックスは、{{myCheck}}</label>
+			<label><input type="checkbox" value="red" v-model="myChecks">赤</label><br>
+			<label><input type="checkbox" value="green" v-model="myChecks">緑</label><br>
+			<label><input type="checkbox" value="blue" v-model="myChecks">青</label><br>
+			選択したのは、{{myChecks}}
 		</div>
 
 		<script>
 			new Vue({
 				el: '#app',
 				data: {
-					myCheck:false
+					myChecks:[]
 				}
 			})
 		</script>
