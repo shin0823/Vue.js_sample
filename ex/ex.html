@@ -2,24 +2,24 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Vue.js sample</title>
+		<title>Vue.js sample</title>		
 		<link rel="stylesheet" href="style.css" >
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 	</head>
 	
 	<body>
-		<h2>配列の値を表示する例</h2>
 		<div id="app">
-			<!--配列の値を表示する例-->
-			<p>{{ myArray }}</p>
-			<p>{{ myArray[0] }}</p>
+			<label><input type="radio" value="face1.png" v-model="fileName">face1</label><br>
+			<label><input type="radio" value="face2.png" v-model="fileName">face2</label><br>
+			<p>{{fileName}}を選択</p>
+			<img v-bind:src="fileName"></img>
 		</div>
 
 		<script>
 			new Vue({
 				el: '#app',
 				data: {
-					myArray:['ダージリン','アールグレイ','セイロン']
+					fileName:''
 				}
 			})
 		</script>
