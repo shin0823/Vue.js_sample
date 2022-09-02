@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Vue.js 演習問題</title>
+    <link rel="stylesheet" href="style.css" >
+    <script src=
+      "https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js">
+    </script>
+  </head>
+  
+  <body>
+    <h2>いろいろな型のデータを表示する演習</h2>
+    <div id="app">
+        <table border="1">
+            <caption>主要都市情報</caption>
+            <tbody>
+              <tr>
+                <th>都市名</th>
+                <th>人口</th>
+                <th>政令指定都市</th>
+              </tr>
+              <tr>
+                <td>青森市</td>
+                <td>28.76万人</td>
+                <td>false</td>
+              </tr>
+              <tr>
+                <td>仙台市</td>
+                <td>108.2万人</td>
+                <td>true</td>
+              </tr>
+              <tr>
+                <td>盛岡市</td>
+                <td>29.76万人</td>
+                <td>false</td>
+              </tr>
+            </tbody>
+            </table>
+    </div>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          // 都市
+          city: ["青森市", "仙台市", "盛岡市"],
+          // 人口
+          population: [28.76, 108.2, 29.76],
+          // 政令指定都市
+          govermentCity: [false, true, false]
+        }
+      })
+    </script>
+  </body>
+</html>
