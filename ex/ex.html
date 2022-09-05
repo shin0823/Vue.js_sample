@@ -9,17 +9,20 @@
 	
 	<body>
 		<div id="app">
-			<label><input type="radio" value="face1.png" v-model="fileName">face1</label><br>
-			<label><input type="radio" value="face2.png" v-model="fileName">face2</label><br>
-			<p>{{fileName}}を選択</p>
-			<img v-bind:src="fileName"></img>
+			<p>{{count}}</p>
+			<button v-on:click="countUp">1増やす</button>
 		</div>
 
 		<script>
 			new Vue({
 				el: '#app',
 				data: {
-					fileName:''
+					count:0
+				},
+				methods:{
+					countUp:function(){
+						this.count++;
+					}
 				}
 			})
 		</script>
