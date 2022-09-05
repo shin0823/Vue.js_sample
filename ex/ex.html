@@ -9,19 +9,22 @@
 	
 	<body>
 		<div id="app">
-			<p>{{count}}</p>
-			<button v-on:click="countUp">1増やす</button>
+			<button value="いいね" v-bind:disabled="isClick" v-on:click="oneClick">いいね</button>
 		</div>
 
 		<script>
+			function iine(){
+				alert("いいね")
+			}
 			new Vue({
 				el: '#app',
 				data: {
-					count:0
+					isClick:false
 				},
 				methods:{
-					countUp:function(){
-						this.count++;
+					isClick:function(){
+						this.isClick=true;
+						iine();
 					}
 				}
 			})
