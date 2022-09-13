@@ -10,6 +10,7 @@
 	<body>
 		<h2>文字を入力すると、その文字を含む項目だけ表示される例</h2>
 		<div id="app">
+			<!-- computedで文字を入力すると、その文字を含む項目だけ表示される例 -->
 			<input v-model="findWord">
 			<ul>
 				<li v-for="item in findItems">{{item}}</li>
@@ -24,18 +25,20 @@
 					items:['桃太郎','花咲かじいさん','浦島太郎','かぐや姫','かちかち山']
 				},
 				computed: {
-					// this.findWordが変わったら、その文字が含まれるリストを算出する
-					findItems: function() {
-						if (this.findWord) {
-							return this.items.filter(function(value) {
-								return (value.indexOf(this.findWord) > -1);
-							}, this);
-						} else {
-							// this.findWordが空のときは、リストをそのまま返す
-							return this.items;
-						}
-					}
-				}
+                    // this.findWordが変わったら、その文字が含まれるリストを算出する
+                    findItems: function() {
+                        if (this.findWord) {
+                             // 配列名.filter( コールバック関数(要素の値, 要素のインデックス) )
+                            return this.items.filter(function(value) {
+                                // 文字列.indexOf(検索文字列 [, 開始インデックス])
+                                return (value.indexOf(this.findWord) > -1);
+                            }, this); //コールバック内でthisを使用するために第2引数でthisを渡す
+                        } else {
+                            // this.findWordが空のときは、リストをそのまま返す
+                            return this.items;
+                        }
+                    }
+                }
 			})
 		</script>
 	</body>
