@@ -18,6 +18,7 @@
 
 		<script>
 			new Vue({
+				// watchで数字がクルクルとアニメーションをしながら値が増えるinput要素の例
 				el: "#app",
 				data: {
 					myNumber: 0,
@@ -37,6 +38,11 @@
 					}
 				}
 			})
+			/*
+            1.inputのmyNumberを入力する
+            2.watchでmyNumberの変化に対してtweenedNumberを増やす
+            3.computedでtweenedNumberを固定小数点文字列に変換してanimeNumberを返す
+            */
 		</script>
 	</body>
 </html>
