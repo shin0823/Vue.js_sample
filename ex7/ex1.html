@@ -13,9 +13,9 @@
     <h2>ボタンを押してリストが増減するとき、アニメーションする例</h2>
     <div id="app">
       <ol>
-      <transition>
+      <transition-group>
         <li v-for="item in cityList" v-bind:key="item">{{item}}</li>
-      </transition>  
+      </transition-group>  
 
 
 
@@ -30,7 +30,7 @@
         <label>番号：
             <input v-model="removeNumber">
         </label>
-        <button v-on:click="addList">追加</button>
+        <button v-on:click="removeLast">削除</button>
       </p>
     </div>
     
@@ -43,10 +43,13 @@
           removeNumber: 0
         },
         methods: {
-
-
-
-
+          addList: function(){
+            this.cityList.push(this.addItem);
+            this.addItem='';
+          },
+          removeLast:function(){
+            this.cityList.splice(this.removeNumber -1,1)
+          }
         }
       })
     </script>
