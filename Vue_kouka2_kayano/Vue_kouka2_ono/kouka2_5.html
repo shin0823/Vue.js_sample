@@ -1,0 +1,133 @@
+<!-- kkouka2_4.htmlを拡張して作成してください -->
+<!-- kouka2_3.htmlを拡張して作成してください -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>効果測定</title>
+    
+    <link rel="stylesheet" href="style.css" >
+    <script src=
+      "https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js">
+    </script>
+
+  </head>
+  
+  <body>
+    <h2>コンポーネントを作って表示する例</h2>
+    <div id="app">
+      <aomori-component></aomori-component>
+      <miyagi-component></miyagi-component>
+      <iwate-component></iwate-component>
+      <shizuoka-component></shizuoka-component>
+    </div>
+
+    <script>
+      
+        // プログラム作成部分
+        var AomoriComponent={
+          template:'<p class="aomori-comp">青森県 <br> 人口:{{count}}万人 <button v-on:click="addOne">千人増加</button> <button v-on:click="delOne">千人減少</button></p>',
+          data:function(){
+            return{
+                count:124.9
+            }
+          },
+          methods:{
+            addOne:function(){
+                this.count+=0.1;
+            },
+            delOne:function(){
+                this.count-=0.1;
+            }
+          }
+        }
+        var MiyagiComponent={
+          template:'<p class="miyagi-comp">宮城県 <br> 人口:{{count}}万人 <button v-on:click="addOne">千人増加</button> <button v-on:click="delOne">千人減少</button></p>',
+          data:function(){
+            return{
+                count:230.6
+            }
+          },
+          methods:{
+            addOne:function(){
+                this.count+=0.1;
+            },
+            delOne:function(){
+                this.count-=0.1;
+            }
+          }
+        }
+        var IwateComponent={
+          template:'<p class="iwate-comp">岩手県 <br> 人口:{{count}}万人 <button v-on:click="addOne">千人増加</button> <button v-on:click="delOne">千人減少</button></p>',
+          data:function(){
+            return{
+                count:122.9
+            }
+          },
+          methods:{
+            addOne:function(){
+                this.count+=0.1;
+            },
+            delOne:function(){
+                this.count-=0.1;
+            }
+          }
+        }
+        var ShizuokaComponent={
+          template:'<p class="shizuoka-comp">静岡県 <br> 人口:{{count}}万人 <button v-on:click="addOne">千人増加</button> <button v-on:click="delOne">千人減少</button></p>',
+          data:function(){
+            return{
+                count:363.8
+            }
+          },
+          methods:{
+            addOne:function(){
+                this.count+=0.1;
+            },
+            delOne:function(){
+                this.count-=0.1;
+            }
+          }
+        }
+        
+
+      new Vue({
+        el: '#app',
+
+        // プログラム作成部分
+        components:{
+          'aomori-component':AomoriComponent,
+          'miyagi-component':MiyagiComponent,
+          'iwate-component':IwateComponent,
+          'shizuoka-component':ShizuokaComponent
+        }
+
+      })
+    </script>
+    
+    <style>
+      p {
+        width: 350px;
+        border: solid;
+        border-radius: 8px;
+        padding: 8px;
+      }
+      .aomori-comp {
+        background-color: #F0FFF0;
+        border-color: darkgreen;
+      }
+      .miyagi-comp {
+        background-color: #FFF0F5;
+        border-color: orange;
+      }
+      .iwate-comp {
+        background-color: #F5F5DC;
+        border-color: burlywood;
+      }
+      .shizuoka-comp {
+        background-color: #E0FFFF;
+        border-color: #0000CD;
+      }
+    </style>
+  </body>
+</html>
