@@ -14,7 +14,7 @@
                 <div class="col-md-12">
                     <h1>{{ title }}</h1>
                     <button class="btn btn-primary my-2" @click="showModal">ユーザ登録</button>
-                    <table class="table" rules="all">
+                    <table class="table" rules="all" border="1">
                         <thead class="ad" >
                             <tr>
                                 <th>ID</th>
@@ -109,7 +109,7 @@
                     this.$modal.hide('user-modal');
                 },
                 externalLink() {
-                    const url = 'https://theuselessweb.com/'
+                    const url = 'https://www.yahoo.co.jp/'
                     window.location.href = url
                 }
                         },
@@ -146,22 +146,27 @@
         })
     </script>
     <style>
-        .table{
-            border: solid;  
-            background: #EDECF1;      
+        .table{ 
+            background: #EDECF1;    
+              
         }
         .my-comp{
             position: relative;
             left:210px;
-            background: #F6F6F4; 
+            background: #f4f6f4; 
+            background: linear-gradient(to right, Magenta, yellow, Cyan, Magenta) 0% center/200%;
+            animation: gaming 2s linear infinite;
         }
+        @keyframes gaming {
+            100% { background-position-x: 200%; }
+        } 
         .as{
-            background-image: url("afd7e9d7db0c33360b7319c0cac4a1b2_t.jpeg");
+            background-image: url("filipp-romanovski-vM9EjF9evcc-unsplash.jpg");
             background-size: 100%,100%;
         }
         .ad{
             background-color: rgb(104, 104, 104);
-            color: #EDECF1;
+            color: #ffffff;
         }
 
     </style>
